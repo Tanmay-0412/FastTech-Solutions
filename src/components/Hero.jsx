@@ -75,9 +75,9 @@ const Hero = () => {
                 </div>
                 
                 <div className="hello w-[50%] absolute right-[-22%] top-[2%] sm:top-[50%] sm:-translate-y-[50%] sm:flex sm:flex-col sm:w-fit" ref={hello}>
-                    <h1 className="text-[27vw] font-bold uppercase leading-none sm:text-[8rem] lg:text-[9.5rem] xl:text-[10.5rem]">he</h1>
+                    <h1 className="text-[27vw] font-bold uppercase leading-none sm:text-[8rem] lg:text-[9.5rem] xl:text-[10.5rem]">Fast</h1>
                     <div className="h-fit w-fit flex mt-[-15px] gap-2">
-                        <h1 className="text-[27vw] font-bold uppercase leading-none sm:text-[8rem] lg:text-[9.5rem] xl:text-[10.5rem]">llo</h1>
+                        <h1 className="text-[27vw] font-bold uppercase leading-none sm:text-[8rem] lg:text-[9.5rem] xl:text-[10.5rem]">Tech</h1>
                         <div className="w-[5vw] h-[5vw] self-end rounded-full bg-[#FFB600] mb-[5px] sm:w-[2rem] sm:h-[2rem] lg:w-[2.2rem] lg:h-[2.2rem]"></div>
                     </div>
                 </div>
