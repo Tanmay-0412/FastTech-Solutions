@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+import '../index.css'
+
 
 const Hero = () => {
     let hello = useRef();
@@ -36,6 +39,25 @@ const Hero = () => {
         }, 'a')
     }, []);
 
+      useEffect(() => {
+        const phrases = [
+            "We Create, Innovate, Grow, Enhance",
+            "Digital Solutions for Tomorrow",
+            "FastTech: Future-Proof Your Business"
+        ];
+
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 }); // infinite loop
+
+        phrases.forEach((phrase, i) => {
+            tl.to(".text", {
+            text: phrase,
+            duration: 1.8,
+            ease: "none"
+            });
+        });
+        }, []);
+
+
     return (
         <div className="h-[100vh] w-[100vw] relative overflow-hidden">
             <div 
@@ -67,10 +89,14 @@ const Hero = () => {
                             The World's Leading Provider of Digital Transformation Solutions
                         </h1>
                         <p className="text-white text-[4.5vw] sm:text-[1.2rem] leading-6 lg:text-[1.2rem] xl:text-[1.4rem] mt-4">
-                            We,The Team Freelance, are web, mobile, and enterprise development
+                            We,The Team of FastTech Solutions, are web, mobile, and enterprise development
                             specialists who design and create solutions to keep your company
                             future-proof in an ever-changing environment.
                         </p>
+                    </div>
+                    <div>
+                        <h3 className="text text-4xl" style={{ fontFamily: "monospace" }}></h3>
+                        <span className="typewriter-cursor">|</span>
                     </div>
                 </div>
                 
