@@ -11,6 +11,7 @@ import award2 from './aboutAssets/award2.png'
 import award3 from './aboutAssets/award3.png'
 import FormPage from "../../components/form/FormPage";
 import Footer from "../../components/footer/Footer";
+import TeamSection from "../../components/TeamSection";
 const About = () => {
   return (
     <div className="mx-auto translate-x-[-50%] absolute left-[50%] w-screen  max-w-[1600px] ">
@@ -53,8 +54,7 @@ const About = () => {
         <div className="bg-zinc-100 mt-10 py-10 px-8 lg:px-20 flex flex-col gap-8 lg:flex-row lg:items-center ">
           <div className="flex flex-col text-center items-center gap-5 lg:w-[50%] lg:text-start lg:items-start">
             <h2 className="text-[1.7rem] font-semibold leading-9">Creating world-class experiences, forming a vision, and delivering software</h2>
-            <p className="text-[0.95rem]">Working with The Team Freelance has had a long-term positive influence on our capacity to innovate and execute quickly. There is a great focus on not simply doing what you ask for by the personnel there.</p>
-
+            <p className="text-[0.95rem]">Working with The FastTech Solutions has had a long-term positive influence on our capacity to innovate and execute quickly. There is a great focus on not simply doing what you ask for by the personnel there.</p>
               <button className='group cursor-pointer relative z-[0]  mt-4 w-fit px-4 py-3 uppercase text-white text-md overflow-hidden before:content-[""] before:absolute before:h-full before:w-[55%] before:top-0 before:left-0 before:bg-[#01345B] before:z-[-1] before:transition-all before:duration-300 hover:before:w-[100%]'>
                 <span className="relative z-[2]">let's</span>
                 <span className="relative z-10 ml-1 group-hover:text-white text-black transition-colors duration-300">
@@ -66,9 +66,11 @@ const About = () => {
             <MiniCard head='Responsive Design' no='01' para='We develop web pages and websites that are easy to navigate on every screen size, regardless of resolution.'/>
             <MiniCard head='Easy to Customize' no='02' para='Customers may simply tailor their requirements and applications to meet their own needs.'/>
             <MiniCard head='Excellent Performance' no='03' para='A user will be more happy with your website if it runs well.'/>
-
           </div>
         </div>
+
+        {/* Team Section */}
+        <TeamSection />
         {/* Awards Section */}
         <div className="px-8 lg:px-20 mt-10 lg:flex lg:items-center">
           <div className="flex flex-col gap-7 text-center lg:w-[70%]">
