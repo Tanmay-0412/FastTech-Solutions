@@ -3,9 +3,9 @@ import "./TeamSection.css";
 
 const teamMembers = [
   {
-    name: "Schott Watkins",
-    role: "Web Developer",
-    image: "/images/pexels-andrea-piacquadio-845434.jpg",
+    name: "Akash Yadav",
+    role: "Backend Developer",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9hDqW6flcNwH0PixV1VTbBl6mY_KEb__sQA&s",
     socials: {
       facebook: "https://www.facebook.com/",
       twitter: "https://twitter.com/login",
@@ -14,9 +14,9 @@ const teamMembers = [
     }
   },
   {
-    name: "Nicole Bell",
-    role: "Mobile Developer",
-    image: "/images/pexels-vinicius-wiesehofer-1130624.jpg",
+    name: "Tanmay Sawant",
+    role: "Frontend Developer",
+    image: "https://img.freepik.com/free-vector/follow-me-social-business-theme-design_24877-50426.jpg?semt=ais_incoming&w=740&q=80",
     socials: {
       facebook: "https://www.facebook.com/",
       twitter: "https://twitter.com/login",
