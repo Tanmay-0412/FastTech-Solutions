@@ -50,7 +50,7 @@ const teamMembers = [
 
 const TeamSection = () => (
   <section className="team" style={{ marginTop: "7rem" }}>
-    <h1 className="heading" style={{ marginTop: "-1.5rem" }} id="team">Our team</h1>
+    <h1 className="heading" style={{ marginTop: "-1.5rem" }} id="team">Our Team</h1>
     <div className="team-row">
       {teamMembers.map((member, idx) => (
         <div className="team-card" key={idx}>

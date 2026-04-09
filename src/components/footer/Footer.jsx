@@ -42,7 +42,7 @@ const Footer = () => {
       </div>
       <div className='w-full flex flex-col items-center gap-4 md:items-start px-9'>
         <FootHead head='contact us'/>
-        <h4>+1 360-200-0991</h4>
+        <h4>+91 9326450238</h4>
         <div className='flex gap-4 md:items-start'>
             <div className='cursor-pointer border-2 border-zinc-300 rounded-full w-10 h-10 flex items-center justify-center'>
               <i className="text-xl ri-facebook-fill"></i>
@@ -68,13 +68,13 @@ const Footer = () => {
       </div>
       <div className='flex flex-col text-center lg:px-9 items-center md:items-start lg:items-center lg:justify-start md:px-9 justify-center gap-4 md:gap-2 lg:gap-[2vw] mt-10 lg:mt-15 w-[100vw] lg:flex-row '>
         <div className='md:flex md:items-center lg:items-center gap-4 md:gap-4 '>
-          <h6 className='copyright  text-sm md:text-[0.9rem] lg:text-[0.8rem] xl:text-[0.9rem]'>&copy;2018-2022 The Team Freelance LLC. All rights reserved. </h6>
+          <h6 className='copyright  text-sm md:text-[0.9rem] lg:text-[0.8rem] xl:text-[0.9rem] bg-gray-200'>&copy;2026 The FastTech Solutions Ltd. All rights reserved. </h6>
           <div className='flex gap-10 mt-4 md:mt-0 md:gap-4 lg:mt-0 justify-center'>
             <h5 className='text-sm md:text-[0.9rem] lg:text-[0.8rem] xl:text-[0.9rem] text-blue-700 cursor-pointer'>Privacy Policy</h5>
             <h5 className='text-sm md:text-[0.9rem] lg:text-[0.8rem] xl:text-[0.9rem] text-blue-700 cursor-pointer'>Terms & Condition</h5>
           </div>
         </div>
-        <div className='lastDiv flex items-center lg:justify-center gap-4 py-2'>
+        {/* <div className='lastDiv flex items-center lg:justify-center gap-4 py-2'>
           <div className='flex items-center gap-4'>
             <img className='h-12 md:h-17 lg:h-9 xl:h-13 cursor-pointer' src={spon1} alt='Sponsers Image'/>
             <img className='h-7 md:h-10 lg:h-7 xl:h-8 cursor-pointer' src={spon2} alt='Sponsers Image'/>
@@ -85,7 +85,7 @@ const Footer = () => {
             <h3 className='bg-yellow-400 px-1 py-1 text-white text-sm md:font-bold lg:text-[0.8rem] xl:text-[0.9rem]'>DMCA</h3>
             <h3 className='bg-black text-white px-1 py-1  md:font-bold text-sm lg:text-[0.8rem] xl:text-[0.9rem]'>PROTECTED</h3>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

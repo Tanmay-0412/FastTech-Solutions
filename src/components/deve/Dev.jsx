@@ -206,7 +206,7 @@ const Dev = () => {
           </div>
         )}
       </div>
-      <div className="mt-18 flex flex-col lg:w-full lg:justify-center gap-10 md:flex-row md:gap-30 lg:gap-20 ">
+      {/* <div className="mt-18 flex flex-col lg:w-full lg:justify-center gap-10 md:flex-row md:gap-30 lg:gap-20 ">
         <div className="flex flex-col gap-15 md:justify-between lg:flex-row lg:gap-20">
             <div className="flex flex-col items-center ">
                 <h1 className="text-[3.2em] lg:text-[3.5rem] font-semibold">50 +</h1>
@@ -226,7 +226,7 @@ const Dev = () => {
                 <h2 className="text-white text-2xl skew-x-12 will-change-transform leading-none group-hover:-skew-x-22 transition-all duration-300">Inspired By Our Vision</h2>
             </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

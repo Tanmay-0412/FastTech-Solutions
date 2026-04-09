@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import "./index.css";
 import logo from "./assets/logo.png";
 import ServiceHead from "./components/service/ServiceHead";
@@ -8,6 +9,50 @@ import { NavLink } from "react-router-dom";
 import { useBlogData } from './context/Context'; 
 
 const Header = () => {
+  // Modal styles can be improved or moved to a CSS file
+const modalBackdrop = {
+  position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.4)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center'
+};
+const modalBox = {
+  background: '#fff', borderRadius: '10px', padding: '2rem', minWidth: '320px', maxWidth: '95vw', boxShadow: '0 2px 24px rgba(0,0,0,0.2)', position: 'relative'
+};
+// Feature options for the quote modal
+const featureOptions = [
+  'User Authentication/Login',
+  'Admin Panel',
+  'Payment Integration',
+  'Chat/Support',
+  'Push Notifications',
+  'Analytics/Reports',
+  'File Uploads',
+  'Third-party Integrations',
+  'Custom Forms',
+  'Blog/News Section',
+  'Product Catalog',
+  'Booking/Appointment System',
+  'Multi-language Support',
+];
+  // Modal state
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [quoteForm, setQuoteForm] = useState({
+    projectType: '',
+    pages: 1,
+    features: [],
+    design: '',
+    timeline: '',
+    budget: '',
+  });
+
+  const estimatedAmount = quoteForm.pages * 100;
+
+  const handleFeatureChange = (feature) => {
+    setQuoteForm((prev) => {
+      const features = prev.features.includes(feature)
+        ? prev.features.filter((f) => f !== feature)
+        : [...prev.features, feature];
+      return { ...prev, features };
+    });
+  };
   // Service categories data
   const serviceCategories = [
     {
@@ -295,9 +340,119 @@ const Header = () => {
               </li>
             </ul>
             
-            <button className="px-4 rounded-lg py-2 text-[1rem] border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 w-fit cursor-pointer">
+            <button
+              className="px-4 rounded-lg py-2 text-[1rem] border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 w-fit cursor-pointer"
+              onClick={() => setShowQuoteModal(true)}
+              // onClick={() => console.log('btn clicked')}
+              type="button"
+            >
               <i className="ri-quote-text mr-2"></i>Get Free Quote
             </button>
+                {showQuoteModal && (
+                  <div style={modalBackdrop}>
+                    <div style={modalBox}>
+                      <button
+                        style={{ position: 'absolute', top: 10, right: 16, fontSize: 22, background: 'none', border: 'none', cursor: 'pointer' }}
+                        onClick={() => setShowQuoteModal(false)}
+                        aria-label="Close"
+                      >
+                        ×
+                      </button>
+                      <h2 className="text-xl font-bold mb-4">Get Free Quote</h2>
+                      <form className="flex flex-col gap-3" onSubmit={e => e.preventDefault()}>
+                        <label className="font-semibold">Select Project Type</label>
+                        <select
+                          className="border p-2 rounded"
+                          value={quoteForm.projectType}
+                          onChange={e => setQuoteForm({ ...quoteForm, projectType: e.target.value })}
+                          required
+                        >
+                          <option value="">Select...</option>
+                          <option value="Healthcare">Healthcare</option>
+                          <option value="Real Estate">Real Estate</option>
+                          <option value="Retail & E-Commerce">Retail & E-Commerce</option>
+                          <option value="Automotive">Automotive</option>
+                          <option value="Education">Education</option>
+                          <option value="Entertainment">Entertainment</option>
+                        </select>
+
+                        <label className="font-semibold">Number of Pages</label>
+                        <input
+                          type="number"
+                          min={1}
+                          max={100}
+                          className="border p-2 rounded"
+                          value={quoteForm.pages}
+                          onChange={e => setQuoteForm({ ...quoteForm, pages: Math.max(1, Math.min(100, Number(e.target.value))) })}
+                          required
+                        />
+
+                        <label className="font-semibold">Features Required</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-40 overflow-y-auto mb-2">
+                          {featureOptions.map((feature) => (
+                            <label key={feature} className="flex items-center gap-2">
+                              <input
+                                type="checkbox"
+                                checked={quoteForm.features.includes(feature)}
+                                onChange={() => handleFeatureChange(feature)}
+                              />
+                              {feature}
+                            </label>
+                          ))}
+                        </div>
+
+                        <label className="font-semibold">Design Preference</label>
+                        <select
+                          className="border p-2 rounded"
+                          value={quoteForm.design}
+                          onChange={e => setQuoteForm({ ...quoteForm, design: e.target.value })}
+                          required
+                        >
+                          <option value="">Select...</option>
+                          <option value="Basic">Basic</option>
+                          <option value="Standard">Standard</option>
+                          <option value="Premium">Premium/Custom</option>
+                        </select>
+
+                        <label className="font-semibold">Timeline Expectation</label>
+                        <select
+                          className="border p-2 rounded"
+                          value={quoteForm.timeline}
+                          onChange={e => setQuoteForm({ ...quoteForm, timeline: e.target.value })}
+                          required
+                        >
+                          <option value="">Select...</option>
+                          <option value="1-2 weeks">1-2 weeks</option>
+                          <option value="2-4 weeks">2-4 weeks</option>
+                          <option value="1-2 months">1-2 months</option>
+                          <option value="Flexible">Flexible</option>
+                        </select>
+
+                        <label className="font-semibold">Budget Range (optional)</label>
+                        <select
+                          className="border p-2 rounded"
+                          value={quoteForm.budget}
+                          onChange={e => setQuoteForm({ ...quoteForm, budget: e.target.value })}
+                        >
+                          <option value="">Select...</option>
+                          <option value="< ₹10,000">{'< ₹10,000'}</option>
+                          <option value="₹10,000 - ₹50,000">₹10,000 - ₹50,000</option>
+                          <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                          <option value="> ₹1,00,000">{'> ₹1,00,000'}</option>
+                        </select>
+
+                        <div className="mt-4 font-semibold text-lg">Estimated Amount: <span className="text-[#FFB600]">₹{estimatedAmount}</span> <span className="text-xs">(₹100/page)</span></div>
+                        <button
+                          className="mt-4 px-4 py-2 rounded bg-[#FFB600] text-black font-bold hover:bg-[#e6a800] transition"
+                          type="button"
+                          onClick={() => setShowQuoteModal(false)}
+                        >
+                          Submit
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
           </div>
         </div>
         
@@ -377,7 +532,8 @@ const Header = () => {
               </div>
             </li>
             
-            <button className="px-3 sm:text-[1.2rem] rounded-lg py-2 mt-5 text-[1rem] border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 w-fit cursor-pointer">
+            <button className="px-3 sm:text-[1.2rem] rounded-lg py-2 mt-5 text-[1rem] border border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 w-fit cursor-pointer"
+            onClick={() => console.log('btn clicked')}>
               <i className="ri-quote-text mr-2"></i>Get Free Quote
             </button>
           </ul>

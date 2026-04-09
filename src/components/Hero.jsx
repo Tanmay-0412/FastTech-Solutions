@@ -46,7 +46,7 @@ const Hero = () => {
             "FastTech: Future-Proof Your Business"
         ];
 
-        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 }); // infinite loop
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 }); 
 
         phrases.forEach((phrase, i) => {
             tl.to(".text", {
@@ -82,9 +82,9 @@ const Hero = () => {
                                 d="M476 480H324a36 36 0 0 1-36-36V96h-96v156a36 36 0 0 1-36 36H16a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h112V68a36 36 0 0 1 36-36h152a36 36 0 0 1 36 36v348h96V260a36 36 0 0 1 36-36h140a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H512v156a36 36 0 0 1-36 36z"
                             ></path>
                         </svg>
-                        <h3 className="text-[6vw] sm:text-[1.6rem] lg:text-[1.9rem] text-white">Since 2018</h3>
+                        <h3 className="text-[6vw] sm:text-[1.6rem] lg:text-[1.9rem] text-white">Welcome to FastTech Solutions Ltd.</h3>
                     </div>
-                    <div className="head-para">
+                    <div className="head-para mb-10">
                         <h1 className="font-semibold tracking-wide text-[7.5vw] sm:text-[2.2rem] sm:leading-10 lg:text-[2.2rem] xl:text-[2.45rem]">
                             The World's Leading Provider of Digital Transformation Solutions
                         </h1>
@@ -95,8 +95,8 @@ const Hero = () => {
                         </p>
                     </div>
                     <div>
-                        <h3 className="text text-4xl" style={{ fontFamily: "monospace" }}></h3>
-                        <span className="typewriter-cursor">|</span>
+                        <h3 className="text text-4xl" style={{ fontFamily: "monospace" }}><span className="typewriter-cursor">|</span></h3>
+                        
                     </div>
                 </div>
                 

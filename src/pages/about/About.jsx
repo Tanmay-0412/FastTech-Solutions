@@ -48,7 +48,7 @@ const About = () => {
         </div>
         <div className="flex flex-col px-8 gap-6 mt-10 py-8  lg:px-20 lg:flex-row lg:gap-14">
           <ParaBox head='Our Vision' para='To become a global leader in the field of information technology by offering cutting-edge site design, mobile app development, and internet marketing services that will propel our clients businesses forward. We strive to develop brands that shoot high and climb the business to tremendous heights by rewarding our clients trust and happiness. Businesses may quickly decrease their operating costs and uncover genuine company potential thanks to our offshore edge.'/>
-          <ParaBox head='Our Mission' para='The Team Freelance is a leading web design and mobile app development firm that works with clients ranging from small businesses to major corporations to create online and mobile-enabled apps. We are known for utilising the strength of our knowledge and talents to create profitable, flourishing, engaging, and simple-to-use applications. We exclusively work with the best iOS, Android, and web app developers, so you can outsource your project and obtain a high-quality result.'/>
+          <ParaBox head='Our Mission' para='The FastTech Solutions is a leading web design and mobile app development firm that works with clients ranging from small businesses to major corporations to create online and mobile-enabled apps. We are known for utilising the strength of our knowledge and talents to create profitable, flourishing, engaging, and simple-to-use applications. We exclusively work with the best iOS, Android, and web app developers, so you can outsource your project and obtain a high-quality result.'/>
         </div>
         {/* Cards Section */}
         <div className="bg-zinc-100 mt-10 py-10 px-8 lg:px-20 flex flex-col gap-8 lg:flex-row lg:items-center ">
@@ -72,7 +72,7 @@ const About = () => {
         {/* Team Section */}
         <TeamSection />
         {/* Awards Section */}
-        <div className="px-8 lg:px-20 mt-10 lg:flex lg:items-center">
+        {/* <div className="px-8 lg:px-20 mt-10 lg:flex lg:items-center">
           <div className="flex flex-col gap-7 text-center lg:w-[70%]">
               <h1 className="text-[1.85rem] font-semibold lg:text-[2.5rem] lg:whitespace-nowrap">Awards & Recognition</h1>
             <div className="flex flex-row-reverse justify-center gap-5">          
@@ -102,7 +102,7 @@ const About = () => {
                 </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Form Section */}
         <FormPage />
         {/* Footer Section */}

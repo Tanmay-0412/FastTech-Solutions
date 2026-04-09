@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Page1Content from './Page1Content'
 import Page1Slider from './Page1Slider'
 import slide1 from '../assets/slide1.svg'
@@ -8,6 +8,14 @@ import slide3 from '../assets/slide3.svg'
 const Page1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = 3;
+
+  // Auto-slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+    }, 3000); // 3000ms = 3s
+    return () => clearInterval(interval);
+  }, [totalSlides]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
